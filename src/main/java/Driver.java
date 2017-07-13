@@ -1,7 +1,5 @@
 import com.uwetrottmann.tmdb2.Tmdb;
-import com.uwetrottmann.tmdb2.entities.Movie;
-import com.uwetrottmann.tmdb2.entities.MovieKeywords;
-import com.uwetrottmann.tmdb2.entities.MovieResultsPage;
+import com.uwetrottmann.tmdb2.entities.*;
 import com.uwetrottmann.tmdb2.services.MoviesService;
 import com.uwetrottmann.tmdb2.services.SearchService;
 import retrofit2.Call;
@@ -15,9 +13,7 @@ public class Driver {
     public static void main(String[] args) throws IOException {
 
         Tmdb tmdb = new Tmdb(API_KEY);
-
         MoviesService movieService = tmdb.moviesService();
-        SearchService searchService = tmdb.searchService();
 
         Call<MovieResultsPage> call = movieService.popular(1,"Disney");
         MovieResultsPage results = call.execute().body();
