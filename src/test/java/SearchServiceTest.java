@@ -1,7 +1,9 @@
 import com.uwetrottmann.tmdb2.Tmdb;
 import com.uwetrottmann.tmdb2.entities.*;
 import com.uwetrottmann.tmdb2.services.SearchService;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,6 +21,9 @@ public class SearchServiceTest {
 
     Tmdb tmdb = new Tmdb(API_KEY);
     SearchService service = tmdb.searchService();
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void Test_Callback(){
@@ -52,6 +57,16 @@ public class SearchServiceTest {
         when(searchService.company(COMPANY_NAME,1)).thenReturn(call);
         //assert that the call is the same for our Company
         assertEquals(searchService.company(COMPANY_NAME,1), call);
+    }
+
+    @Test
+    public void Should_ThrowNullPointerException() throws IOException {
+        // Create call for our company with a huge amount
+        Call<CompanyResultsPage> call = service.company(COMPANY_NAME, 999999);
+        // Get all company results
+        CompanyResultsPage companyResult = call.execute().body();
+        thrown.expect(NullPointerException.class);
+        String firstCompanyName = companyResult.results.get(0).name;
     }
 
 }

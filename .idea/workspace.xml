@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de2f6c41-010c-4711-a493-69c60b5aa895" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/SearchServiceTest.class" afterPath="$PROJECT_DIR$/target/test-classes/SearchServiceTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asv.iml" afterPath="$PROJECT_DIR$/asv.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/SearchServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/SearchServiceTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,10 +18,33 @@
       <file leaf-file-name="SearchServiceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/SearchServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="396">
+              <caret line="67" column="50" lean-forward="true" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IOException.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/jre/lib/rt.jar!/java/io/IOException.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exception.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/jre/lib/rt.jar!/java/lang/Exception.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+              <folding>
+                <element signature="e#300#301#0" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -315,44 +333,44 @@
       <workItem from="1499982034634" duration="39000" />
       <workItem from="1499982299261" duration="2328000" />
       <workItem from="1499986697802" duration="2055000" />
-      <workItem from="1499990147761" duration="2776000" />
+      <workItem from="1499990147761" duration="4595000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 29m 06s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 06m 42s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 29m 45s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 07m 39s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 32m 22s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 08m 17s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 33m 01s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 09m 12s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 34m 05s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 10m 09s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 35m 06s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 10m 29s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 35m 31s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 11m 13s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 41m 10s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 11m 36s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 41m 44s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 12m 07s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchServiceTest - 2017.07.14 at 02h 42m 12s.xml">
+    <history-entry file="SearchServiceTest - 2017.07.14 at 03h 12m 37s.xml">
       <configuration name="SearchServiceTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11986000" />
+    <option name="totallyTimeSpent" value="13805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -366,7 +384,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -583,10 +601,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/jre/lib/rt.jar!/java/io/IOException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/jre/lib/rt.jar!/java/lang/Throwable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2346">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/jre/lib/rt.jar!/java/lang/Exception.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding>
+            <element signature="e#300#301#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SearchServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="396">
+          <caret line="67" column="50" lean-forward="true" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
