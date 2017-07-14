@@ -1,9 +1,11 @@
 import com.uwetrottmann.tmdb2.Tmdb;
-import com.uwetrottmann.tmdb2.entities.Company;
-import com.uwetrottmann.tmdb2.entities.CompanyResultsPage;
+import com.uwetrottmann.tmdb2.entities.*;
 import com.uwetrottmann.tmdb2.services.SearchService;
 import org.junit.Test;
+import org.mockito.Mock;
 import retrofit2.Call;
+import retrofit2.Callback;
+
 import static org.mockito.Mockito.*;
 
 import java.io.IOException;
@@ -17,6 +19,16 @@ public class SearchServiceTest {
 
     Tmdb tmdb = new Tmdb(API_KEY);
     SearchService service = tmdb.searchService();
+
+    @Test
+    public void Test_Callback(){
+        Tmdb tmdb = mock(Tmdb.class);
+        when(tmdb.searchService()).thenAnswer(i ->{
+            Callback callback = i.getArgument(0);
+            callback.notify();
+            return null;
+        });
+    }
 
     @Test
     public void Should_Find_Company() throws IOException {
