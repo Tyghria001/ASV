@@ -1,10 +1,13 @@
 import com.uwetrottmann.tmdb2.Tmdb;
 import com.uwetrottmann.tmdb2.entities.*;
 import com.uwetrottmann.tmdb2.services.SearchService;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -16,19 +19,41 @@ import static org.junit.Assert.assertEquals;
 
 public class SearchServiceTest {
 
-    private final String API_KEY = "b041e3dc3beef2b03b96c835b6b052ff";
     private final String COMPANY_NAME = "Disney Pixar";
 
-    Tmdb tmdb = new Tmdb(API_KEY);
-    SearchService service = tmdb.searchService();
+    Tmdb tmdb;
+    SearchService searchService;
+    Call<CompanyResultsPage> call;
+
+    @Mock
+    Tmdb tmdbMock;
+    @Mock
+    SearchService searchServiceMock;
+    @Mock
+    Call<CompanyResultsPage> callMock;
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
+    @Before
+    public void setUp() {
+        tmdb = new Tmdb("b041e3dc3beef2b03b96c835b6b052ff");
+        searchService = tmdb.searchService();
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @After
+    public void tearDown() {
+        tmdb = null;
+        searchService = null;
+        call = null;
+        searchServiceMock = null;
+        callMock = null;
+    }
+
     @Test
-    public void Test_Callback(){
-        Tmdb tmdb = mock(Tmdb.class);
-        when(tmdb.searchService()).thenAnswer(i ->{
+    public void Test_Callback() {
+        when(tmdbMock.searchService()).thenAnswer(i -> {
             Callback callback = i.getArgument(0);
             callback.notify();
             return null;
@@ -37,33 +62,23 @@ public class SearchServiceTest {
 
     @Test
     public void Should_Find_Company() throws IOException {
-        // Create call for our company
-        Call<CompanyResultsPage> call = service.company(COMPANY_NAME, 1);
-        // Get all company results
-        CompanyResultsPage companyResult = call.execute().body();
-        // Search for our company in the results
-        for(Company company : companyResult.results){
+        call = searchService.company(COMPANY_NAME, 1);
+        CompanyResultsPage companyResult = call.execute().body(); // Get all company results
+        for (Company company : companyResult.results) { // Search for our company in the results
             assertEquals(company.name, COMPANY_NAME, COMPANY_NAME);
         }
     }
 
     @Test
     public void Test_Search_Company() throws IOException {
-        // Mock SearchService
-        SearchService searchService = mock(SearchService.class);
-        // Mock Call<CompanyResultsPage>
-        Call<CompanyResultsPage> call = mock(Call.class);
-        // define return value for method company()
-        when(searchService.company(COMPANY_NAME,1)).thenReturn(call);
-        //assert that the call is the same for our Company
-        assertEquals(searchService.company(COMPANY_NAME,1), call);
+        when(searchServiceMock.company(COMPANY_NAME, 1)).thenReturn(callMock);
+        call = searchServiceMock.company(COMPANY_NAME, 1);
+        assertEquals(call, callMock);
     }
 
     @Test
     public void Should_ThrowNullPointerException() throws IOException {
-        // Create call for our company with a huge amount
-        Call<CompanyResultsPage> call = service.company(COMPANY_NAME, 999999);
-        // Get all company results
+        call = searchService.company(COMPANY_NAME, 999999);
         CompanyResultsPage companyResult = call.execute().body();
         thrown.expect(NullPointerException.class);
         String firstCompanyName = companyResult.results.get(0).name;

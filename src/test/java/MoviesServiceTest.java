@@ -2,11 +2,12 @@ import com.uwetrottmann.tmdb2.Tmdb;
 import com.uwetrottmann.tmdb2.entities.*;
 import com.uwetrottmann.tmdb2.services.MoviesService;
 import com.uwetrottmann.tmdb2.services.SearchService;
-import org.junit.Rule;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import retrofit2.Call;
-import retrofit2.Callback;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,32 +18,43 @@ import static org.mockito.Mockito.when;
 
 public class MoviesServiceTest {
 
-    private final String API_KEY = "b041e3dc3beef2b03b96c835b6b052ff";
+    Tmdb tmdb;
+    MoviesService moviesService;
+    Call<MovieResultsPage> call;
 
-    Tmdb tmdb = new Tmdb(API_KEY);
-    MoviesService moviesService = tmdb.moviesService();
+    @Mock
+    MoviesService moviesServiceMock;
+    @Mock
+    Call<MovieResultsPage> callMock;
+
+    @Before
+    public void setUp() {
+        tmdb = new Tmdb("b041e3dc3beef2b03b96c835b6b052ff");
+        moviesService = tmdb.moviesService();
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @After
+    public void tearDown() {
+        tmdb = null;
+        moviesService = null;
+        call = null;
+        moviesServiceMock = null;
+        callMock = null;
+    }
 
     @Test
-    public void Test_Popular_Movie() throws IOException {
-        // Mock moviesService
-        MoviesService moviesService = mock(MoviesService.class);
-        // Mock Call<MovieResultsPage>
-        Call<MovieResultsPage> call = mock(Call.class);
-        // define return value for method popular()
-        when(moviesService.popular(1, "Disney")).thenReturn(call);
-        //assert that the call is the same for our Movie
-        assertEquals(moviesService.popular(1, "Disney"), call);
+    public void Test_ReturnPopularCall() throws IOException {
+        when(moviesServiceMock.popular(1, null)).thenReturn(callMock);
+        call = moviesServiceMock.popular(1, null);
+        assertEquals(call, callMock);
     }
 
     @Test
     public void Should_Find_Latest_Movie() throws IOException {
-        //Get the latest movie
-        MoviesService moviesService = tmdb.moviesService();
-        Movie latestMovie = moviesService.latest().execute().body();
-        //Search for the latest movie
         SearchService searchService = tmdb.searchService();
-        Call<MovieResultsPage> call = searchService.movie(
-                latestMovie.title,
+        Movie latestMovie = moviesService.latest().execute().body();
+        call = searchService.movie(latestMovie.title,
                 null,
                 latestMovie.original_language,
                 latestMovie.adult,
@@ -51,11 +63,9 @@ public class MoviesServiceTest {
                 null
         );
         List<Movie> results = call.execute().body().results;
-        //Check if the latest movie is found
-        for (Movie foundMovie : results) {
+        for (Movie foundMovie : results) {  //Check if the latest movie is found
             assertEquals(foundMovie.title, latestMovie.title, latestMovie.title);
         }
     }
-
 
 }
